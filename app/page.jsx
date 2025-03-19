@@ -255,56 +255,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials" className="py-16 bg-slate-900/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">What Our Users Say</h2>
-            <p className="mt-4 text-xl text-slate-300">Trusted by thousands of users worldwide</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "FinancePro has completely changed how I manage my money. The insights are invaluable!",
-                author: "Sarah J.",
-                role: "Small Business Owner",
-              },
-              {
-                quote:
-                  "I've tried many finance apps, but this one stands out with its intuitive interface and powerful features.",
-                author: "Michael T.",
-                role: "Software Engineer",
-              },
-              {
-                quote: "The budget tracking features have helped me save over $500 in just three months!",
-                author: "Priya K.",
-                role: "Marketing Manager",
-              },
-            ].map((testimonial, index) => (
-              <Card key={index} className="blue-card backdrop-blur-md border-slate-700/50 shadow-sm">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-slate-300 mb-6">{testimonial.quote}</p>
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-white font-medium">
-                      {testimonial.author.charAt(0)}
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-white font-medium">{testimonial.author}</p>
-                      <p className="text-slate-400 text-sm">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* CTA Section */}
       <section className="py-16">

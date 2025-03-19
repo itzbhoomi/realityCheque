@@ -103,9 +103,7 @@ export default function Dashboard() {
         <div className="p-4 sm:p-6 md:p-8 lg:p-10 responsive-padding">
           <header className="flex items-center justify-between mb-6 md:mb-8">
             <div className="flex items-center gap-3">
-              <SidebarTrigger className="h-10 w-10 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 flex items-center justify-center">
-                <Menu className="h-5 w-5 text-slate-300" />
-              </SidebarTrigger>
+              
 
               <div>
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
@@ -241,8 +239,8 @@ export default function Dashboard() {
               <Card className="blue-card backdrop-blur-md border-slate-700/50 shadow-sm">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
                   <div>
-                    <CardTitle className="text-lg font-semibold text-white">Recent Expenses</CardTitle>
-                    <CardDescription className="text-slate-400">Your expenditures this month</CardDescription>
+                    <CardTitle className="text-lg font-semibold text-white">Recent transactiosn</CardTitle>
+                    <CardDescription className="text-slate-400">Your transactions this month</CardDescription>
                   </div>
                   <AddExpenseDialog userId={user.id}>
                     <Button
@@ -267,7 +265,7 @@ export default function Dashboard() {
                         <p className="mt-2 text-sm text-slate-400">Loading expenses...</p>
                       </div>
                     ) : (
-                      <div className="overflow-x-hidden">
+                      <div className="overflow-x-hidden overflow-y-auto max-h-110">
                         <TableDemo expenses={expenses} onExpenseDeleted={handleExpenseDeleted} />
                       </div>
                     )}
