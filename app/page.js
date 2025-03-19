@@ -289,7 +289,7 @@ export default function LandingPage() {
                       <Star key={star} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  
+                  <p className="text-slate-300 mb-6">{testimonial.quote}</p>
                   <div className="flex items-center">
                     <div className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-white font-medium">
                       {testimonial.author.charAt(0)}
