@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Ensure this is correctly set in your .env file
+}
+
+model User {
+  UserID    String  @id @default(uuid()) // Primary key
+  firstName String
+  lastName  String?
+  Email     String  @unique
+  Password  String  // Stored as a hashed password
+  Budget    Float?  // For budget notifications
+  expenses  MonthlyExpenses[] // One-to-many relationship
+}
+
+model MonthlyExpenses {
+  ExpenseID Int      @id @default(autoincrement()) // Auto-incrementing primary key
+  Date      DateTime @default(now()) // Automatically set the date
+  Status    String   // Dropdown: debited/credited
+  Method    String   // Dropdown: Cash/Card/UPI/Net Banking
+  Amount    Float
+  Category  String?
+
+  UserID    String  // Foreign key referencing User
+  User      User    @relation(fields: [UserID], references: [UserID], onDelete: Cascade) 
+}

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "Budget" DROP NOT NULL;
